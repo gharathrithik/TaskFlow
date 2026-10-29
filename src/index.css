@@ -1,0 +1,149 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --border: #e2e5ea;
+  --accent: #2563eb;
+  --low: #16a34a;
+  --medium: #d97706;
+  --high: #dc2626;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.app-header {
+  padding: 16px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 24px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.column h2 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.count {
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.task-list,
+.labels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.task-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--surface);
+}
+
+.task-title {
+  margin: 6px 0;
+}
+
+.priority {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.priority-low {
+  color: var(--low);
+}
+
+.priority-medium {
+  color: var(--medium);
+}
+
+.priority-high {
+  color: var(--high);
+}
+
+.labels {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: 0.75rem;
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--muted);
+}
+
+.add-task-form {
+  display: flex;
+  gap: 6px;
+}
+
+.add-task-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.add-task-form input,
+.add-task-form select,
+.add-task-form button {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.add-task-form button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
